@@ -1,0 +1,9 @@
+idSecondmant	id_Employee	id_Departmant
+1	37	1
+2	25	4
+3	9	3
+4	23	1
+5	12	4
+6	5	3
+7	30	1
+8	13	2

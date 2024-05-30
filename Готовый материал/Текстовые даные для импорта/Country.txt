@@ -1,0 +1,9 @@
+idCountry	Name	CarBrands	CooperationOnDetails	BusinessTripCooperation
+1	Франция	Peugeot, Seat, Citroen, Renault	Да	Нет
+2	Россия	Lada, UAZ, Ural, KamAZ	Нет	Да
+3	Германия	Mercedes-Benz, BMW, Volkswagen, Audi, Porsche	Нет	Да
+4	Япония	Toyota, Nissan, Honda, Isuzu, Suzuki, Daihatsu, Toyo	Нет	Да
+5	Корея	Huyndai, KIA, SsangYung	Да	Да
+6	Китай	Geely, Chery, BYD, Haval, Changan	Нет	Да
+7	Америка	DMC, Chevrolet, Ford, Dodge, RAM	Нет	Да
+8	Италия	Fiat, Ferrari, Lamborghini, Maserati	Нет	Да

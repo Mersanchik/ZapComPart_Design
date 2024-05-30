@@ -1,0 +1,869 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище ProductionModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="idCategory" />
+          </Key>
+          <Property Name="idCategory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ChiefDepartmant">
+          <Key>
+            <PropertyRef Name="idChiefDepartmant" />
+          </Key>
+          <Property Name="idChiefDepartmant" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Login" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ChiefWorkshop">
+          <Key>
+            <PropertyRef Name="idChiefWorkshop" />
+          </Key>
+          <Property Name="idChiefWorkshop" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Login" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="idCountry" />
+          </Key>
+          <Property Name="idCountry" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CarBrands" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CooperationOnDetails" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="BusinessTripCooperation" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="id_ChiefWorkshop" Type="int" />
+          <Property Name="id_ChiefDepartmant" Type="int" />
+        </EntityType>
+        <EntityType Name="Departmant">
+          <Key>
+            <PropertyRef Name="idDepartmant" />
+          </Key>
+          <Property Name="idDepartmant" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="id_Chief" Type="int" Nullable="false" />
+          <Property Name="Responsibilities" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Details">
+          <Key>
+            <PropertyRef Name="idDetails" />
+          </Key>
+          <Property Name="idDetails" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="CountInWarehouse" Type="int" Nullable="false" />
+          <Property Name="id_Category" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OfficeEmployee">
+          <Key>
+            <PropertyRef Name="idOfficeEmployee" />
+          </Key>
+          <Property Name="idOfficeEmployee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="id_Chief" Type="int" Nullable="false" />
+          <Property Name="id_Departmant" Type="int" Nullable="false" />
+          <Property Name="Login" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="OfficeSecondment">
+          <Key>
+            <PropertyRef Name="idSecondmant" />
+          </Key>
+          <Property Name="idSecondmant" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_Employee" Type="int" Nullable="false" />
+          <Property Name="id_Departmant" Type="int" Nullable="false" />
+          <Property Name="DateStart" Type="date" />
+          <Property Name="DateEnd" Type="date" />
+        </EntityType>
+        <EntityType Name="ProductionEmployee">
+          <Key>
+            <PropertyRef Name="idProductionEmployee" />
+          </Key>
+          <Property Name="idProductionEmployee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="id_ChiefWorkshop" Type="int" Nullable="false" />
+          <Property Name="id_Workshop" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductionSecondment">
+          <Key>
+            <PropertyRef Name="idSecondmant" />
+          </Key>
+          <Property Name="idSecondmant" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_Employee" Type="int" Nullable="false" />
+          <Property Name="id_Workshop" Type="int" Nullable="false" />
+          <Property Name="DateStart" Type="date" />
+          <Property Name="DateEnd" Type="date" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Workshop">
+          <Key>
+            <PropertyRef Name="idWorkshop" />
+          </Key>
+          <Property Name="idWorkshop" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="id_ChiefWorkshop" Type="int" Nullable="false" />
+          <Property Name="Responsibilities" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Country_ChiefDepartmant1">
+          <End Role="ChiefDepartmant" Type="Self.ChiefDepartmant" Multiplicity="0..1" />
+          <End Role="Country" Type="Self.Country" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiefDepartmant">
+              <PropertyRef Name="idChiefDepartmant" />
+            </Principal>
+            <Dependent Role="Country">
+              <PropertyRef Name="id_ChiefDepartmant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Country_ChiefWorkshop1">
+          <End Role="ChiefWorkshop" Type="Self.ChiefWorkshop" Multiplicity="0..1" />
+          <End Role="Country" Type="Self.Country" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiefWorkshop">
+              <PropertyRef Name="idChiefWorkshop" />
+            </Principal>
+            <Dependent Role="Country">
+              <PropertyRef Name="id_ChiefWorkshop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departmant_ChiefDepartmant">
+          <End Role="ChiefDepartmant" Type="Self.ChiefDepartmant" Multiplicity="1" />
+          <End Role="Departmant" Type="Self.Departmant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiefDepartmant">
+              <PropertyRef Name="idChiefDepartmant" />
+            </Principal>
+            <Dependent Role="Departmant">
+              <PropertyRef Name="id_Chief" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Details_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Details" Type="Self.Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="idCategory" />
+            </Principal>
+            <Dependent Role="Details">
+              <PropertyRef Name="id_Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OfficeEmployee_ChiefDepartmant">
+          <End Role="ChiefDepartmant" Type="Self.ChiefDepartmant" Multiplicity="1" />
+          <End Role="OfficeEmployee" Type="Self.OfficeEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiefDepartmant">
+              <PropertyRef Name="idChiefDepartmant" />
+            </Principal>
+            <Dependent Role="OfficeEmployee">
+              <PropertyRef Name="id_Chief" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OfficeEmployee_Departmant">
+          <End Role="Departmant" Type="Self.Departmant" Multiplicity="1" />
+          <End Role="OfficeEmployee" Type="Self.OfficeEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departmant">
+              <PropertyRef Name="idDepartmant" />
+            </Principal>
+            <Dependent Role="OfficeEmployee">
+              <PropertyRef Name="id_Departmant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OfficeSecondment_Departmant">
+          <End Role="Departmant" Type="Self.Departmant" Multiplicity="1" />
+          <End Role="OfficeSecondment" Type="Self.OfficeSecondment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departmant">
+              <PropertyRef Name="idDepartmant" />
+            </Principal>
+            <Dependent Role="OfficeSecondment">
+              <PropertyRef Name="id_Departmant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OfficeSecondment_OfficeEmployee">
+          <End Role="OfficeEmployee" Type="Self.OfficeEmployee" Multiplicity="1" />
+          <End Role="OfficeSecondment" Type="Self.OfficeSecondment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OfficeEmployee">
+              <PropertyRef Name="idOfficeEmployee" />
+            </Principal>
+            <Dependent Role="OfficeSecondment">
+              <PropertyRef Name="id_Employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductionEmployee_ChiefWorkshop">
+          <End Role="ChiefWorkshop" Type="Self.ChiefWorkshop" Multiplicity="1" />
+          <End Role="ProductionEmployee" Type="Self.ProductionEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiefWorkshop">
+              <PropertyRef Name="idChiefWorkshop" />
+            </Principal>
+            <Dependent Role="ProductionEmployee">
+              <PropertyRef Name="id_ChiefWorkshop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductionEmployee_Workshop">
+          <End Role="Workshop" Type="Self.Workshop" Multiplicity="1" />
+          <End Role="ProductionEmployee" Type="Self.ProductionEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Workshop">
+              <PropertyRef Name="idWorkshop" />
+            </Principal>
+            <Dependent Role="ProductionEmployee">
+              <PropertyRef Name="id_Workshop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductionSecondment_ProductionEmployee">
+          <End Role="ProductionEmployee" Type="Self.ProductionEmployee" Multiplicity="1" />
+          <End Role="ProductionSecondment" Type="Self.ProductionSecondment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductionEmployee">
+              <PropertyRef Name="idProductionEmployee" />
+            </Principal>
+            <Dependent Role="ProductionSecondment">
+              <PropertyRef Name="id_Employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductionSecondment_Workshop">
+          <End Role="Workshop" Type="Self.Workshop" Multiplicity="1" />
+          <End Role="ProductionSecondment" Type="Self.ProductionSecondment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Workshop">
+              <PropertyRef Name="idWorkshop" />
+            </Principal>
+            <Dependent Role="ProductionSecondment">
+              <PropertyRef Name="id_Workshop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Workshop_ChiefWorkshop">
+          <End Role="ChiefWorkshop" Type="Self.ChiefWorkshop" Multiplicity="1" />
+          <End Role="Workshop" Type="Self.Workshop" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiefWorkshop">
+              <PropertyRef Name="idChiefWorkshop" />
+            </Principal>
+            <Dependent Role="Workshop">
+              <PropertyRef Name="id_ChiefWorkshop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище ProductionModelContainer">
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChiefDepartmant" EntityType="Self.ChiefDepartmant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChiefWorkshop" EntityType="Self.ChiefWorkshop" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departmant" EntityType="Self.Departmant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Details" EntityType="Self.Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OfficeEmployee" EntityType="Self.OfficeEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OfficeSecondment" EntityType="Self.OfficeSecondment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductionEmployee" EntityType="Self.ProductionEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductionSecondment" EntityType="Self.ProductionSecondment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Workshop" EntityType="Self.Workshop" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Country_ChiefDepartmant1" Association="Self.FK_Country_ChiefDepartmant1">
+            <End Role="ChiefDepartmant" EntitySet="ChiefDepartmant" />
+            <End Role="Country" EntitySet="Country" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Country_ChiefWorkshop1" Association="Self.FK_Country_ChiefWorkshop1">
+            <End Role="ChiefWorkshop" EntitySet="ChiefWorkshop" />
+            <End Role="Country" EntitySet="Country" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departmant_ChiefDepartmant" Association="Self.FK_Departmant_ChiefDepartmant">
+            <End Role="ChiefDepartmant" EntitySet="ChiefDepartmant" />
+            <End Role="Departmant" EntitySet="Departmant" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_Category" Association="Self.FK_Details_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Details" EntitySet="Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OfficeEmployee_ChiefDepartmant" Association="Self.FK_OfficeEmployee_ChiefDepartmant">
+            <End Role="ChiefDepartmant" EntitySet="ChiefDepartmant" />
+            <End Role="OfficeEmployee" EntitySet="OfficeEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OfficeEmployee_Departmant" Association="Self.FK_OfficeEmployee_Departmant">
+            <End Role="Departmant" EntitySet="Departmant" />
+            <End Role="OfficeEmployee" EntitySet="OfficeEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OfficeSecondment_Departmant" Association="Self.FK_OfficeSecondment_Departmant">
+            <End Role="Departmant" EntitySet="Departmant" />
+            <End Role="OfficeSecondment" EntitySet="OfficeSecondment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OfficeSecondment_OfficeEmployee" Association="Self.FK_OfficeSecondment_OfficeEmployee">
+            <End Role="OfficeEmployee" EntitySet="OfficeEmployee" />
+            <End Role="OfficeSecondment" EntitySet="OfficeSecondment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductionEmployee_ChiefWorkshop" Association="Self.FK_ProductionEmployee_ChiefWorkshop">
+            <End Role="ChiefWorkshop" EntitySet="ChiefWorkshop" />
+            <End Role="ProductionEmployee" EntitySet="ProductionEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductionEmployee_Workshop" Association="Self.FK_ProductionEmployee_Workshop">
+            <End Role="Workshop" EntitySet="Workshop" />
+            <End Role="ProductionEmployee" EntitySet="ProductionEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductionSecondment_ProductionEmployee" Association="Self.FK_ProductionSecondment_ProductionEmployee">
+            <End Role="ProductionEmployee" EntitySet="ProductionEmployee" />
+            <End Role="ProductionSecondment" EntitySet="ProductionSecondment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductionSecondment_Workshop" Association="Self.FK_ProductionSecondment_Workshop">
+            <End Role="Workshop" EntitySet="Workshop" />
+            <End Role="ProductionSecondment" EntitySet="ProductionSecondment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Workshop_ChiefWorkshop" Association="Self.FK_Workshop_ChiefWorkshop">
+            <End Role="ChiefWorkshop" EntitySet="ChiefWorkshop" />
+            <End Role="Workshop" EntitySet="Workshop" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProductionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="idCategory" />
+          </Key>
+          <Property Name="idCategory" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Details" Relationship="Self.FK_Details_Category" FromRole="Category" ToRole="Details" />
+        </EntityType>
+        <EntityType Name="ChiefDepartmant">
+          <Key>
+            <PropertyRef Name="idChiefDepartmant" />
+          </Key>
+          <Property Name="idChiefDepartmant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Countries" Relationship="Self.FK_Country_ChiefDepartmant1" FromRole="ChiefDepartmant" ToRole="Country" />
+          <NavigationProperty Name="Departmants" Relationship="Self.FK_Departmant_ChiefDepartmant" FromRole="ChiefDepartmant" ToRole="Departmant" />
+          <NavigationProperty Name="OfficeEmployees" Relationship="Self.FK_OfficeEmployee_ChiefDepartmant" FromRole="ChiefDepartmant" ToRole="OfficeEmployee" />
+        </EntityType>
+        <EntityType Name="ChiefWorkshop">
+          <Key>
+            <PropertyRef Name="idChiefWorkshop" />
+          </Key>
+          <Property Name="idChiefWorkshop" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Countries" Relationship="Self.FK_Country_ChiefWorkshop1" FromRole="ChiefWorkshop" ToRole="Country" />
+          <NavigationProperty Name="ProductionEmployees" Relationship="Self.FK_ProductionEmployee_ChiefWorkshop" FromRole="ChiefWorkshop" ToRole="ProductionEmployee" />
+          <NavigationProperty Name="Workshops" Relationship="Self.FK_Workshop_ChiefWorkshop" FromRole="ChiefWorkshop" ToRole="Workshop" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="idCountry" />
+          </Key>
+          <Property Name="idCountry" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CarBrands" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CooperationOnDetails" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BusinessTripCooperation" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_ChiefWorkshop" Type="Int32" />
+          <Property Name="id_ChiefDepartmant" Type="Int32" />
+          <NavigationProperty Name="ChiefDepartmant" Relationship="Self.FK_Country_ChiefDepartmant1" FromRole="Country" ToRole="ChiefDepartmant" />
+          <NavigationProperty Name="ChiefWorkshop" Relationship="Self.FK_Country_ChiefWorkshop1" FromRole="Country" ToRole="ChiefWorkshop" />
+        </EntityType>
+        <EntityType Name="Departmant">
+          <Key>
+            <PropertyRef Name="idDepartmant" />
+          </Key>
+          <Property Name="idDepartmant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_Chief" Type="Int32" Nullable="false" />
+          <Property Name="Responsibilities" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ChiefDepartmant" Relationship="Self.FK_Departmant_ChiefDepartmant" FromRole="Departmant" ToRole="ChiefDepartmant" />
+          <NavigationProperty Name="OfficeEmployees" Relationship="Self.FK_OfficeEmployee_Departmant" FromRole="Departmant" ToRole="OfficeEmployee" />
+          <NavigationProperty Name="OfficeSecondments" Relationship="Self.FK_OfficeSecondment_Departmant" FromRole="Departmant" ToRole="OfficeSecondment" />
+        </EntityType>
+        <EntityType Name="Detail">
+          <Key>
+            <PropertyRef Name="idDetails" />
+          </Key>
+          <Property Name="idDetails" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="CountInWarehouse" Type="Int32" Nullable="false" />
+          <Property Name="id_Category" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Details_Category" FromRole="Details" ToRole="Category" />
+        </EntityType>
+        <EntityType Name="OfficeEmployee">
+          <Key>
+            <PropertyRef Name="idOfficeEmployee" />
+          </Key>
+          <Property Name="idOfficeEmployee" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_Chief" Type="Int32" Nullable="false" />
+          <Property Name="id_Departmant" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ChiefDepartmant" Relationship="Self.FK_OfficeEmployee_ChiefDepartmant" FromRole="OfficeEmployee" ToRole="ChiefDepartmant" />
+          <NavigationProperty Name="Departmant" Relationship="Self.FK_OfficeEmployee_Departmant" FromRole="OfficeEmployee" ToRole="Departmant" />
+          <NavigationProperty Name="OfficeSecondments" Relationship="Self.FK_OfficeSecondment_OfficeEmployee" FromRole="OfficeEmployee" ToRole="OfficeSecondment" />
+        </EntityType>
+        <EntityType Name="OfficeSecondment">
+          <Key>
+            <PropertyRef Name="idSecondmant" />
+          </Key>
+          <Property Name="idSecondmant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_Employee" Type="Int32" Nullable="false" />
+          <Property Name="id_Departmant" Type="Int32" Nullable="false" />
+          <Property Name="DateStart" Type="DateTime" Precision="0" />
+          <Property Name="DateEnd" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Departmant" Relationship="Self.FK_OfficeSecondment_Departmant" FromRole="OfficeSecondment" ToRole="Departmant" />
+          <NavigationProperty Name="OfficeEmployee" Relationship="Self.FK_OfficeSecondment_OfficeEmployee" FromRole="OfficeSecondment" ToRole="OfficeEmployee" />
+        </EntityType>
+        <EntityType Name="ProductionEmployee">
+          <Key>
+            <PropertyRef Name="idProductionEmployee" />
+          </Key>
+          <Property Name="idProductionEmployee" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_ChiefWorkshop" Type="Int32" Nullable="false" />
+          <Property Name="id_Workshop" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ChiefWorkshop" Relationship="Self.FK_ProductionEmployee_ChiefWorkshop" FromRole="ProductionEmployee" ToRole="ChiefWorkshop" />
+          <NavigationProperty Name="Workshop" Relationship="Self.FK_ProductionEmployee_Workshop" FromRole="ProductionEmployee" ToRole="Workshop" />
+          <NavigationProperty Name="ProductionSecondments" Relationship="Self.FK_ProductionSecondment_ProductionEmployee" FromRole="ProductionEmployee" ToRole="ProductionSecondment" />
+        </EntityType>
+        <EntityType Name="ProductionSecondment">
+          <Key>
+            <PropertyRef Name="idSecondmant" />
+          </Key>
+          <Property Name="idSecondmant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_Employee" Type="Int32" Nullable="false" />
+          <Property Name="id_Workshop" Type="Int32" Nullable="false" />
+          <Property Name="DateStart" Type="DateTime" Precision="0" />
+          <Property Name="DateEnd" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="ProductionEmployee" Relationship="Self.FK_ProductionSecondment_ProductionEmployee" FromRole="ProductionSecondment" ToRole="ProductionEmployee" />
+          <NavigationProperty Name="Workshop" Relationship="Self.FK_ProductionSecondment_Workshop" FromRole="ProductionSecondment" ToRole="Workshop" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Workshop">
+          <Key>
+            <PropertyRef Name="idWorkshop" />
+          </Key>
+          <Property Name="idWorkshop" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_ChiefWorkshop" Type="Int32" Nullable="false" />
+          <Property Name="Responsibilities" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ChiefWorkshop" Relationship="Self.FK_Workshop_ChiefWorkshop" FromRole="Workshop" ToRole="ChiefWorkshop" />
+          <NavigationProperty Name="ProductionEmployees" Relationship="Self.FK_ProductionEmployee_Workshop" FromRole="Workshop" ToRole="ProductionEmployee" />
+          <NavigationProperty Name="ProductionSecondments" Relationship="Self.FK_ProductionSecondment_Workshop" FromRole="Workshop" ToRole="ProductionSecondment" />
+        </EntityType>
+        <Association Name="FK_Details_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Details" Type="Self.Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="idCategory" />
+            </Principal>
+            <Dependent Role="Details">
+              <PropertyRef Name="id_Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Country_ChiefDepartmant1">
+          <End Role="ChiefDepartmant" Type="Self.ChiefDepartmant" Multiplicity="0..1" />
+          <End Role="Country" Type="Self.Country" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiefDepartmant">
+              <PropertyRef Name="idChiefDepartmant" />
+            </Principal>
+            <Dependent Role="Country">
+              <PropertyRef Name="id_ChiefDepartmant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departmant_ChiefDepartmant">
+          <End Role="ChiefDepartmant" Type="Self.ChiefDepartmant" Multiplicity="1" />
+          <End Role="Departmant" Type="Self.Departmant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiefDepartmant">
+              <PropertyRef Name="idChiefDepartmant" />
+            </Principal>
+            <Dependent Role="Departmant">
+              <PropertyRef Name="id_Chief" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OfficeEmployee_ChiefDepartmant">
+          <End Role="ChiefDepartmant" Type="Self.ChiefDepartmant" Multiplicity="1" />
+          <End Role="OfficeEmployee" Type="Self.OfficeEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiefDepartmant">
+              <PropertyRef Name="idChiefDepartmant" />
+            </Principal>
+            <Dependent Role="OfficeEmployee">
+              <PropertyRef Name="id_Chief" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Country_ChiefWorkshop1">
+          <End Role="ChiefWorkshop" Type="Self.ChiefWorkshop" Multiplicity="0..1" />
+          <End Role="Country" Type="Self.Country" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiefWorkshop">
+              <PropertyRef Name="idChiefWorkshop" />
+            </Principal>
+            <Dependent Role="Country">
+              <PropertyRef Name="id_ChiefWorkshop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductionEmployee_ChiefWorkshop">
+          <End Role="ChiefWorkshop" Type="Self.ChiefWorkshop" Multiplicity="1" />
+          <End Role="ProductionEmployee" Type="Self.ProductionEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiefWorkshop">
+              <PropertyRef Name="idChiefWorkshop" />
+            </Principal>
+            <Dependent Role="ProductionEmployee">
+              <PropertyRef Name="id_ChiefWorkshop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Workshop_ChiefWorkshop">
+          <End Role="ChiefWorkshop" Type="Self.ChiefWorkshop" Multiplicity="1" />
+          <End Role="Workshop" Type="Self.Workshop" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiefWorkshop">
+              <PropertyRef Name="idChiefWorkshop" />
+            </Principal>
+            <Dependent Role="Workshop">
+              <PropertyRef Name="id_ChiefWorkshop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OfficeEmployee_Departmant">
+          <End Role="Departmant" Type="Self.Departmant" Multiplicity="1" />
+          <End Role="OfficeEmployee" Type="Self.OfficeEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departmant">
+              <PropertyRef Name="idDepartmant" />
+            </Principal>
+            <Dependent Role="OfficeEmployee">
+              <PropertyRef Name="id_Departmant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OfficeSecondment_Departmant">
+          <End Role="Departmant" Type="Self.Departmant" Multiplicity="1" />
+          <End Role="OfficeSecondment" Type="Self.OfficeSecondment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departmant">
+              <PropertyRef Name="idDepartmant" />
+            </Principal>
+            <Dependent Role="OfficeSecondment">
+              <PropertyRef Name="id_Departmant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OfficeSecondment_OfficeEmployee">
+          <End Role="OfficeEmployee" Type="Self.OfficeEmployee" Multiplicity="1" />
+          <End Role="OfficeSecondment" Type="Self.OfficeSecondment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OfficeEmployee">
+              <PropertyRef Name="idOfficeEmployee" />
+            </Principal>
+            <Dependent Role="OfficeSecondment">
+              <PropertyRef Name="id_Employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductionEmployee_Workshop">
+          <End Role="Workshop" Type="Self.Workshop" Multiplicity="1" />
+          <End Role="ProductionEmployee" Type="Self.ProductionEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Workshop">
+              <PropertyRef Name="idWorkshop" />
+            </Principal>
+            <Dependent Role="ProductionEmployee">
+              <PropertyRef Name="id_Workshop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductionSecondment_ProductionEmployee">
+          <End Role="ProductionEmployee" Type="Self.ProductionEmployee" Multiplicity="1" />
+          <End Role="ProductionSecondment" Type="Self.ProductionSecondment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductionEmployee">
+              <PropertyRef Name="idProductionEmployee" />
+            </Principal>
+            <Dependent Role="ProductionSecondment">
+              <PropertyRef Name="id_Employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductionSecondment_Workshop">
+          <End Role="Workshop" Type="Self.Workshop" Multiplicity="1" />
+          <End Role="ProductionSecondment" Type="Self.ProductionSecondment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Workshop">
+              <PropertyRef Name="idWorkshop" />
+            </Principal>
+            <Dependent Role="ProductionSecondment">
+              <PropertyRef Name="id_Workshop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProductionEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="ChiefDepartmants" EntityType="Self.ChiefDepartmant" />
+          <EntitySet Name="ChiefWorkshops" EntityType="Self.ChiefWorkshop" />
+          <EntitySet Name="Countries" EntityType="Self.Country" />
+          <EntitySet Name="Departmants" EntityType="Self.Departmant" />
+          <EntitySet Name="Details" EntityType="Self.Detail" />
+          <EntitySet Name="OfficeEmployees" EntityType="Self.OfficeEmployee" />
+          <EntitySet Name="OfficeSecondments" EntityType="Self.OfficeSecondment" />
+          <EntitySet Name="ProductionEmployees" EntityType="Self.ProductionEmployee" />
+          <EntitySet Name="ProductionSecondments" EntityType="Self.ProductionSecondment" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Workshops" EntityType="Self.Workshop" />
+          <AssociationSet Name="FK_Details_Category" Association="Self.FK_Details_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Details" EntitySet="Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Country_ChiefDepartmant1" Association="Self.FK_Country_ChiefDepartmant1">
+            <End Role="ChiefDepartmant" EntitySet="ChiefDepartmants" />
+            <End Role="Country" EntitySet="Countries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departmant_ChiefDepartmant" Association="Self.FK_Departmant_ChiefDepartmant">
+            <End Role="ChiefDepartmant" EntitySet="ChiefDepartmants" />
+            <End Role="Departmant" EntitySet="Departmants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OfficeEmployee_ChiefDepartmant" Association="Self.FK_OfficeEmployee_ChiefDepartmant">
+            <End Role="ChiefDepartmant" EntitySet="ChiefDepartmants" />
+            <End Role="OfficeEmployee" EntitySet="OfficeEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Country_ChiefWorkshop1" Association="Self.FK_Country_ChiefWorkshop1">
+            <End Role="ChiefWorkshop" EntitySet="ChiefWorkshops" />
+            <End Role="Country" EntitySet="Countries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductionEmployee_ChiefWorkshop" Association="Self.FK_ProductionEmployee_ChiefWorkshop">
+            <End Role="ChiefWorkshop" EntitySet="ChiefWorkshops" />
+            <End Role="ProductionEmployee" EntitySet="ProductionEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Workshop_ChiefWorkshop" Association="Self.FK_Workshop_ChiefWorkshop">
+            <End Role="ChiefWorkshop" EntitySet="ChiefWorkshops" />
+            <End Role="Workshop" EntitySet="Workshops" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OfficeEmployee_Departmant" Association="Self.FK_OfficeEmployee_Departmant">
+            <End Role="Departmant" EntitySet="Departmants" />
+            <End Role="OfficeEmployee" EntitySet="OfficeEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OfficeSecondment_Departmant" Association="Self.FK_OfficeSecondment_Departmant">
+            <End Role="Departmant" EntitySet="Departmants" />
+            <End Role="OfficeSecondment" EntitySet="OfficeSecondments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OfficeSecondment_OfficeEmployee" Association="Self.FK_OfficeSecondment_OfficeEmployee">
+            <End Role="OfficeEmployee" EntitySet="OfficeEmployees" />
+            <End Role="OfficeSecondment" EntitySet="OfficeSecondments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductionEmployee_Workshop" Association="Self.FK_ProductionEmployee_Workshop">
+            <End Role="Workshop" EntitySet="Workshops" />
+            <End Role="ProductionEmployee" EntitySet="ProductionEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductionSecondment_ProductionEmployee" Association="Self.FK_ProductionSecondment_ProductionEmployee">
+            <End Role="ProductionEmployee" EntitySet="ProductionEmployees" />
+            <End Role="ProductionSecondment" EntitySet="ProductionSecondments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductionSecondment_Workshop" Association="Self.FK_ProductionSecondment_Workshop">
+            <End Role="Workshop" EntitySet="Workshops" />
+            <End Role="ProductionSecondment" EntitySet="ProductionSecondments" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ProductionModelContainer" CdmEntityContainer="ProductionEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="ProductionModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="idCategory" ColumnName="idCategory" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChiefDepartmants">
+            <EntityTypeMapping TypeName="ProductionModel.ChiefDepartmant">
+              <MappingFragment StoreEntitySet="ChiefDepartmant">
+                <ScalarProperty Name="idChiefDepartmant" ColumnName="idChiefDepartmant" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChiefWorkshops">
+            <EntityTypeMapping TypeName="ProductionModel.ChiefWorkshop">
+              <MappingFragment StoreEntitySet="ChiefWorkshop">
+                <ScalarProperty Name="idChiefWorkshop" ColumnName="idChiefWorkshop" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="ProductionModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="idCountry" ColumnName="idCountry" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CarBrands" ColumnName="CarBrands" />
+                <ScalarProperty Name="CooperationOnDetails" ColumnName="CooperationOnDetails" />
+                <ScalarProperty Name="BusinessTripCooperation" ColumnName="BusinessTripCooperation" />
+                <ScalarProperty Name="id_ChiefWorkshop" ColumnName="id_ChiefWorkshop" />
+                <ScalarProperty Name="id_ChiefDepartmant" ColumnName="id_ChiefDepartmant" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departmants">
+            <EntityTypeMapping TypeName="ProductionModel.Departmant">
+              <MappingFragment StoreEntitySet="Departmant">
+                <ScalarProperty Name="idDepartmant" ColumnName="idDepartmant" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id_Chief" ColumnName="id_Chief" />
+                <ScalarProperty Name="Responsibilities" ColumnName="Responsibilities" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Details">
+            <EntityTypeMapping TypeName="ProductionModel.Detail">
+              <MappingFragment StoreEntitySet="Details">
+                <ScalarProperty Name="idDetails" ColumnName="idDetails" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="CountInWarehouse" ColumnName="CountInWarehouse" />
+                <ScalarProperty Name="id_Category" ColumnName="id_Category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OfficeEmployees">
+            <EntityTypeMapping TypeName="ProductionModel.OfficeEmployee">
+              <MappingFragment StoreEntitySet="OfficeEmployee">
+                <ScalarProperty Name="idOfficeEmployee" ColumnName="idOfficeEmployee" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id_Chief" ColumnName="id_Chief" />
+                <ScalarProperty Name="id_Departmant" ColumnName="id_Departmant" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OfficeSecondments">
+            <EntityTypeMapping TypeName="ProductionModel.OfficeSecondment">
+              <MappingFragment StoreEntitySet="OfficeSecondment">
+                <ScalarProperty Name="idSecondmant" ColumnName="idSecondmant" />
+                <ScalarProperty Name="id_Employee" ColumnName="id_Employee" />
+                <ScalarProperty Name="id_Departmant" ColumnName="id_Departmant" />
+                <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductionEmployees">
+            <EntityTypeMapping TypeName="ProductionModel.ProductionEmployee">
+              <MappingFragment StoreEntitySet="ProductionEmployee">
+                <ScalarProperty Name="idProductionEmployee" ColumnName="idProductionEmployee" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id_ChiefWorkshop" ColumnName="id_ChiefWorkshop" />
+                <ScalarProperty Name="id_Workshop" ColumnName="id_Workshop" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductionSecondments">
+            <EntityTypeMapping TypeName="ProductionModel.ProductionSecondment">
+              <MappingFragment StoreEntitySet="ProductionSecondment">
+                <ScalarProperty Name="idSecondmant" ColumnName="idSecondmant" />
+                <ScalarProperty Name="id_Employee" ColumnName="id_Employee" />
+                <ScalarProperty Name="id_Workshop" ColumnName="id_Workshop" />
+                <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ProductionModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Workshops">
+            <EntityTypeMapping TypeName="ProductionModel.Workshop">
+              <MappingFragment StoreEntitySet="Workshop">
+                <ScalarProperty Name="idWorkshop" ColumnName="idWorkshop" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id_ChiefWorkshop" ColumnName="id_ChiefWorkshop" />
+                <ScalarProperty Name="Responsibilities" ColumnName="Responsibilities" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

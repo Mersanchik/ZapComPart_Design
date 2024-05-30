@@ -1,0 +1,53 @@
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\bin\Debug\ЗапКомЧасть.exe.config
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\bin\Debug\ЗапКомЧасть.exe
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\bin\Debug\ЗапКомЧасть.pdb
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть.csproj.AssemblyReference.cache
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть.csproj.SuggestedBindingRedirects.cache
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\MainWindow.g.cs
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\App.g.cs
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть_MarkupCompile.cache
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть_MarkupCompile.lref
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\MainWindow.baml
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть.g.resources
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть.Properties.Resources.resources
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть.csproj.GenerateResource.cache
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть.csproj.CoreCompileInputs.cache
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть.exe
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть.pdb
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\pages\ChiefForm.g.cs
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\pages\ChiefForm.baml
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\pages\EmployeeDepartment.g.cs
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\pages\EmployeeDepartment.baml
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\bin\Debug\ЗапКомЧасть.exe.config
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\bin\Debug\ЗапКомЧасть.exe
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\bin\Debug\ЗапКомЧасть.pdb
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\bin\Debug\EntityFramework.dll
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\bin\Debug\EntityFramework.xml
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть.csproj.AssemblyReference.cache
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\MainWindow.g.cs
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\pages\ChiefForm.g.cs
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\pages\EmployeeDepartment.g.cs
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\App.g.cs
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть_Content.g.cs
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть_MarkupCompile.cache
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть_MarkupCompile.lref
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\MainWindow.baml
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\pages\ChiefForm.baml
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\pages\EmployeeDepartment.baml
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть.g.resources
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть.Properties.Resources.resources
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть.csproj.GenerateResource.cache
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть.csproj.CoreCompileInputs.cache
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧа.AE8DCDF2.Up2Date
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть.exe
+C:\Users\Виктория\Desktop\Учебная практика 1\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть.pdb
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\bin\Debug\EntityFramework.dll
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\bin\Debug\EntityFramework.SqlServer.dll
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\bin\Debug\EntityFramework.xml
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\bin\Debug\EntityFramework.SqlServer.xml
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\bin\Debug\ru\EntityFramework.resources.dll
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть_Content.g.cs
+H:\Учебная практика\Путилов\День 2\ЗапКомЧасть\ЗапКомЧасть\obj\Debug\ЗапКомЧасть.csproj.CopyComplete

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ProductionModelContainer" CdmEntityContainer="ProductionEntities">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="ProductionModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="idCategory" ColumnName="idCategory" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiefDepartmants">
+      <EntityTypeMapping TypeName="ProductionModel.ChiefDepartmant">
+        <MappingFragment StoreEntitySet="ChiefDepartmant">
+          <ScalarProperty Name="idChiefDepartmant" ColumnName="idChiefDepartmant" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiefWorkshops">
+      <EntityTypeMapping TypeName="ProductionModel.ChiefWorkshop">
+        <MappingFragment StoreEntitySet="ChiefWorkshop">
+          <ScalarProperty Name="idChiefWorkshop" ColumnName="idChiefWorkshop" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="ProductionModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="idCountry" ColumnName="idCountry" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CarBrands" ColumnName="CarBrands" />
+          <ScalarProperty Name="CooperationOnDetails" ColumnName="CooperationOnDetails" />
+          <ScalarProperty Name="BusinessTripCooperation" ColumnName="BusinessTripCooperation" />
+          <ScalarProperty Name="id_ChiefWorkshop" ColumnName="id_ChiefWorkshop" />
+          <ScalarProperty Name="id_ChiefDepartmant" ColumnName="id_ChiefDepartmant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departmants">
+      <EntityTypeMapping TypeName="ProductionModel.Departmant">
+        <MappingFragment StoreEntitySet="Departmant">
+          <ScalarProperty Name="idDepartmant" ColumnName="idDepartmant" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id_Chief" ColumnName="id_Chief" />
+          <ScalarProperty Name="Responsibilities" ColumnName="Responsibilities" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Details">
+      <EntityTypeMapping TypeName="ProductionModel.Detail">
+        <MappingFragment StoreEntitySet="Details">
+          <ScalarProperty Name="idDetails" ColumnName="idDetails" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="CountInWarehouse" ColumnName="CountInWarehouse" />
+          <ScalarProperty Name="id_Category" ColumnName="id_Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OfficeEmployees">
+      <EntityTypeMapping TypeName="ProductionModel.OfficeEmployee">
+        <MappingFragment StoreEntitySet="OfficeEmployee">
+          <ScalarProperty Name="idOfficeEmployee" ColumnName="idOfficeEmployee" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id_Chief" ColumnName="id_Chief" />
+          <ScalarProperty Name="id_Departmant" ColumnName="id_Departmant" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OfficeSecondments">
+      <EntityTypeMapping TypeName="ProductionModel.OfficeSecondment">
+        <MappingFragment StoreEntitySet="OfficeSecondment">
+          <ScalarProperty Name="idSecondmant" ColumnName="idSecondmant" />
+          <ScalarProperty Name="id_Employee" ColumnName="id_Employee" />
+          <ScalarProperty Name="id_Departmant" ColumnName="id_Departmant" />
+          <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+          <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductionEmployees">
+      <EntityTypeMapping TypeName="ProductionModel.ProductionEmployee">
+        <MappingFragment StoreEntitySet="ProductionEmployee">
+          <ScalarProperty Name="idProductionEmployee" ColumnName="idProductionEmployee" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id_ChiefWorkshop" ColumnName="id_ChiefWorkshop" />
+          <ScalarProperty Name="id_Workshop" ColumnName="id_Workshop" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductionSecondments">
+      <EntityTypeMapping TypeName="ProductionModel.ProductionSecondment">
+        <MappingFragment StoreEntitySet="ProductionSecondment">
+          <ScalarProperty Name="idSecondmant" ColumnName="idSecondmant" />
+          <ScalarProperty Name="id_Employee" ColumnName="id_Employee" />
+          <ScalarProperty Name="id_Workshop" ColumnName="id_Workshop" />
+          <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+          <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ProductionModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Workshops">
+      <EntityTypeMapping TypeName="ProductionModel.Workshop">
+        <MappingFragment StoreEntitySet="Workshop">
+          <ScalarProperty Name="idWorkshop" ColumnName="idWorkshop" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id_ChiefWorkshop" ColumnName="id_ChiefWorkshop" />
+          <ScalarProperty Name="Responsibilities" ColumnName="Responsibilities" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
